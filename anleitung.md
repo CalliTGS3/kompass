@@ -2,11 +2,11 @@
 
 ## ~avatar avatar
 
-Dein @boardname@ hat einen eingebauten Sensor, der die Lagerichtung in Grad ausgeben kann. 
-Damit kannst Du einen elektronischen Kompass bauen. Der @boardname@ soll wie bei einem richtigen Kompass 
-einen Pfeil anzeigen, der immer in Richtung Norden zeigt.
+Dein @boardname@ hat einen eingebauten Sensor, der die Lagerichtung des @boardname@ zum Erdmagnetfeld in Grad ausgeben kann. 
+Damit kannst Du einen elektronischen Kompass bauen. Die 5x5 LED Matrix des @boardname@ soll wie bei einem richtigen Kompass 
+einen Pfeil anzeigen, der immer in Richtung Norden zeigt, egal in welche Richtung Du den @boardname@ drehst.
 
-**Beim Start des Programmes auf dem @boardname@ wird ein Abgleich des eingebauten Sensors statfinden. Dazu neigst Du den @boardname@ bitte in alle Richtungen so, daß alle LEDs der 5x5 Matrix der Reihe nach aufleuchten.**
+**Beim Start des Programmes auf dem @boardname@ wird ein Abgleich des eingebauten Sensors gemacht. Dazu neigst Du den @boardname@ bitte in alle Richtungen so, daß alle LEDs der 5x5 Matrix aufleuchten.**
 
 
 ## Schritt 1 @fullscreen
@@ -117,13 +117,46 @@ basic.forever(() => {
 });
 ```
 
+
 ## Schritt 7 @fullscreen
+
+**Zusatzaufgabe, Du kannst diesen Schritt überspringen:**
+Auf der 5x5 LED Matrix des @boardname@ kannst Du noch vier weitere Pfeile darstellen und damit die "Empfindlichkeit"
+des Kompasses erhöhen. Für die Nordrichtung sieht das dann so aus. Wenn Du willst, kannst Du das für alle vier Richtungen programmieren.
+Der Pfeil Richtung Norden wird nur angezeigt, wenn der @boardname@ sich +- 5 Grad in Nordrichtung befindet.
+
+```blocks
+basic.forever(() => {
+    let Grad = input.compassHeading();
+    if (Grad < 45 || Grad > 315) {
+        if (Grad > 5 && Grad < 45) {
+            basic.showIcon(IconNames.ArrowNorthWest)
+        } else if (Grad < 355 && Grad > 315) {
+            basic.showIcon(IconNames.ArrowNorthEast)
+        } else {
+            basic.showIcon(IconNames.ArrowNorth)
+        }
+    }
+    else if (Grad < 135) {
+        basic.showIcon(IconNames.ArrowWest)
+    }
+    else if (Grad < 225) {
+        basic.showIcon(IconNames.ArrowSouth)
+    }
+    else {
+        basic.showIcon(IconNames.ArrowEast)
+    }
+});
+```
+
+
+## Schritt 8 @fullscreen
 
 Schliesse Deinen @boardname@ mit einem USB Kabel an und drücke auf ``|Herunterladen|``. Speichere Dein Programm auf dem Laufwerk **@drivename@**. 
 Damit wird Dein Programm zum @boardname@ übertragen.
 
 
-## Schritt 8
+## Schritt 9
 
 Gut gemacht! Du hast einen elektronischen Kompass für den @boardname@ programmiert.
 Verlasse diese Anleitung, indem Du auf ``|Fertigstellen|`` klickst. 
