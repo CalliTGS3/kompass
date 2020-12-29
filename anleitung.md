@@ -1,6 +1,6 @@
 # Kompass
 
-## ~avatar avatar
+## ~avatar avatar @unplugged
 
 Dein @boardname@ hat einen eingebauten Sensor, der die Lagerichtung des @boardname@ zum Erdmagnetfeld in Grad ausgeben kann. 
 Damit kannst Du einen elektronischen Kompass bauen. Die 5x5 LED Matrix des @boardname@ soll wie bei einem richtigen Kompass 
