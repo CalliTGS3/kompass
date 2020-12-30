@@ -25,7 +25,7 @@ basic.forever(() => {
 ## Schritt 2
 
 Berechne aus dem ermittelten Wert für ``||Variables:Grad||`` den Pfeil für die 5x5 LED Matrix und zeige diesen an.
-Der Wert ``||Input:Kompassausrichtung||`` reicht von 0 Grad bis 360 Grad, beginnt im Norden bei 0 Grad 
+Der Wert ``||Input:Kompassausrichtung||`` reicht von 0 Grad bis 359 Grad, beginnt im Norden bei 0 Grad 
 und nimmt in Richtung Osten, Süden und Westen zu. Wir können auf dem @boardname@ 4 verschiedene Pfeile darstellen und somit
 unterteilen wir den Kreis mit 360 Grad in 4 gleiche Teile. Ein Viertelkreis stellt damit jeweils eine Himmelsrichtung dar.
 Beachte, daß die Mitte der Viertelkreise jeweils bei den Himmelsrichtungen 90, 180, 270 und 360 Grad liegen. 
